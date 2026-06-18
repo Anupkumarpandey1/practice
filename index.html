@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Some Dog</title>
+  <style>
+
+  </style>
+</head>
+<body>
+  <div class="Background">
+    <h1 class="first">https://dog.ceo/api/breed/</h1>
+    
+    <h1>/images/random</h1>
+  </div>
+</body>
+<script>
+ 
+  
+   async function l1(){
+  const res = await fetch("https://dog.ceo/api/breeds/list/all");
+  const result = await res.json();
+  let global_names = Object.keys(result.message);
+    console.log(global_names);
+    return global_names;
+  }
+  async function upd(){
+    const global_names = await l1();
+    
+  let parent = `<select class="parent">`;
+
+  
+  for(let i = 0; i < global_names.length; i++){
+    let name1 = global_names[i];
+    const para = `<option value=${name1}> ${name1}</option>`;
+    parent += para;
+  }
+  parent+=`</select>`;
+    document.body.after('Background');
+    console.log(parent);
+  }
+
+upd()
+;  
+
+    // document.appendChild(parent);
+
+</script>
+</html>
