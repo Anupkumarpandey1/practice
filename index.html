@@ -11,7 +11,7 @@
 <body>
   <div class="Background">
     <h1 class="first">https://dog.ceo/api/breed/</h1>
-    
+    <button>This is a Button</button>
     <h1>/images/random</h1>
   </div>
 </body>
@@ -33,11 +33,11 @@
   
   for(let i = 0; i < global_names.length; i++){
     let name1 = global_names[i];
-    const para = `<option value=${name1}> ${name1}</option>`;
+    const para = `<option> ${name1}</option>`;
     parent += para;
   }
   parent+=`</select>`;
-    document.body.after('Background');
+    document.body.append(parent)
     console.log(parent);
   }
 
